@@ -5,13 +5,15 @@ import {Text, View, StyleSheet, Button, TouchableOpacity} from 'react-native';
 // import configureStore from './app/stores/store'
 
 import Home from './app/containers/Home/home'
+import RootScreen from './app/containers/Root/RootScreen'
 
 //const store = configureStore()
 
  class App extends Component {
   render() {
     return (
-      <Home></Home>
+      // <Home></Home>
+      <RootScreen></RootScreen>
     );
   }
 }

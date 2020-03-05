@@ -34,7 +34,6 @@ export default {
     height: screenHeight,
     ratio
   },
-
   tabBarStyle: {
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
