@@ -1,4 +1,4 @@
-const URL ='https://wrapapi.com/use/chipviet/news/cafe/0.0.1?wrapAPIKey=TEgXzcPd5KeHk7QB5ypDv3sB3aKirYMU'
+const URL ='https://wrapapi.com/use/chipviet/news/cafe/0.0.2?wrapAPIKey=TEgXzcPd5KeHk7QB5ypDv3sB3aKirYMU'
 
 function getNews(){
     return fetch(URL)

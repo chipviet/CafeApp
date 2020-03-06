@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   Row,
+  Image,
 } from 'react-native';
 import styles from './style';
 import getNews from '../../api/getNews';
@@ -24,45 +25,44 @@ export default class Home extends Component {
 
   fetchNews = () => {
     getNews()
-      //.then(data => this.getNews(data))
-      .then(data => console.log('data',data))
+      .then(data => this.getItem(data))
       .catch(error => console.log('error', error));
   };
 
   getItem = data => {
-    
+    console.log('data', data.output.collection);
     this.setState({
-      
+      data: data.output.collection,
     });
   };
 
-  renderCafe = ({item}) => {
+  renderNews = ({item}) => {
     return (
       <View>
-        <View style={styles.listMarket}>
-          <Text>{item.markets}</Text>
-          <Text style={styles.txtFluct}>{item.fluct}</Text>
-          <Text>{item.price}</Text>
+        <View>
+          <View style={styles.image}>
+            <Image
+              style={{width: 250, height: 150}}
+              source={{uri: item.image}}></Image>
+          </View>
+          <Text style={styles.txtTitle}>{item.title}</Text>
+          <Text>{item.info}</Text>
+          <Text>{item.review}</Text>
         </View>
       </View>
     );
   };
-  renderGold = ({item}) => {
-    return (
-      <View>
-        <View style={styles.listMarket}>
-          <Text>{item.category}</Text>
-          <Text style={styles.txtFluct}>{item.bidprice}</Text>
-          <Text>{item.askingprice}</Text>
-        </View>
-      </View>
-    );
-  };
-
   render() {
     return (
       <View>
-     
+        <Text style={styles.txtHeader}> NEWS</Text>
+        <View>
+          <FlatList
+            data={this.state.data}
+            renderItem={this.renderNews}
+            keyExtractor={(item, index) => index.toString()}
+            ></FlatList>
+        </View>
       </View>
     );
   }
