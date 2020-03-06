@@ -31,10 +31,6 @@ export default class Home extends Component {
   };
 
   getItem = data => {
-    console.log('data', data);
-    console.log('cafe', data.output2.cafeprice);
-    console.log('gold', data.output2.goldprice);
-    console.log('date:', data.output2.date);
     this.setState({
       cafe: data.output2.cafeprice,
       gold: data.output2.goldprice,
@@ -53,6 +49,7 @@ export default class Home extends Component {
       </View>
     );
   };
+
   renderGold = ({item}) => {
     return (
       <View>
@@ -65,8 +62,8 @@ export default class Home extends Component {
     );
   };
 
+
   render() {
-    console.log('state', this.state);
     return (
       <View>
         <View>

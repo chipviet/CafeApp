@@ -9,29 +9,40 @@ import  ApplicationStyles  from '../theme/ApplicationStyles'
 import  Colors  from '../theme/Color'
 import HomeStack from './HomeTabNavigator'
 import NewsStack from './NewsTabNavigator'
+import DiscussStack from './DiscussionTabNavigator'
 
 const BottomTabNavigator = createMaterialBottomTabNavigator(
   {
     Home: {
       screen: HomeStack,
       navigationOptions: ({ screenProps }) => ({
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ focused }) => {
-          const icon =  require('../assets/img/cafe_icon.png')
+        tabBarLabel: 'Giá',
+        // tabBarIcon: ({ focused }) => {
+        //   const icon =  require('../assets/img/cafe_icon.png')
 
-          return (<Image source={icon} />)
-        }
+        //   return (<Image source={icon} />)
+        // }
       })
     },
   
     News: {
       screen: NewsStack,
       navigationOptions: ({ screenProps }) => ({
-        tabBarLabel: 'News',
-        tabBarIcon: ({ focused }) => {
-          const icon =  require('../assets/img/news_icon.png') 
-          return (<Image source={icon} />)
-        }
+        tabBarLabel: 'Tin tức',
+        // tabBarIcon: ({ focused }) => {
+        //   const icon =  require('../assets/img/news_icon.png') 
+        //   return (<Image source={icon} />)
+        // }
+      })
+    }, 
+    Discuss: {
+      screen: DiscussStack,
+      navigationOptions: ({ screenProps }) => ({
+        tabBarLabel: 'Thảo luận',
+        // tabBarIcon: ({ focused }) => {
+        //   const icon =  require('../assets/img/cafe_icon.png') 
+        //   return (<Image source={icon} />)
+        // }
       })
     }, 
   },
